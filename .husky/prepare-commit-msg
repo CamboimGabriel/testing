@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # O nome da pasta a ser observada
-folder_to_watch="./src"
+folder_to_watch="./public"
 echo "Rodando"
 
 # Inicialmente, verificamos se a pasta existe
@@ -15,7 +15,6 @@ fi
 # Verificamos se houve alterações na pasta
 changes=$(git ls-files -m "$folder_to_watch")
 
-echo $changes
 # Se houve alterações, adicionamos todas elas ao índice do Git e fazemos o commit
 if [ -n "$changes" ]; then
   echo "aaaaaa"
