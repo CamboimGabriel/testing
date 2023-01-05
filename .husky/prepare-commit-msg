@@ -17,6 +17,7 @@ changes=$(git ls-files -m "$folder_to_watch")
 
 # Se houve alterações, adicionamos todas elas ao índice do Git e fazemos o commit
 if [ -n "$changes" ]; then
+  echo "aaaaaa"
   git add -A
   git commit -m "Alterações na pasta android detectadas"
 fi
