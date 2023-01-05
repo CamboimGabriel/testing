@@ -19,6 +19,7 @@ echo $changes
 # Se houve alterações, adicionamos todas elas ao índice do Git e fazemos o commit
 if [ -n "$changes" ]; then
   echo "aaaaaa"
-  #git add -A
-  #git commit -m "Alterações na pasta android detectadas"
+  # Append branch name and optional description to COMMIT_MSG
+	# For info on parameters to githooks, run: man githooks
+	echo "\n\n: hyfbeuh" >> "$1"
 fi
