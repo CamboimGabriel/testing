@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # O nome da pasta a ser observada
-folder_to_watch="src/"
+folder_to_watch=".husky/"
 echo "Rodando"
 
 # Inicialmente, verificamos se a pasta existe
