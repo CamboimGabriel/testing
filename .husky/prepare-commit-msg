@@ -13,7 +13,7 @@ fi
 
 # Usamos o comando "git ls-files" para verificar se houve alterações na pasta
 # Verificamos se houve alterações na pasta
-changes=$(git diff $folder_to_watch)
+changes=$(git diff --cached --name-only --diff-filter=ACM $folder_to_watch)
 
 echo $changes
 # Se houve alterações, adicionamos todas elas ao índice do Git e fazemos o commit
