@@ -21,5 +21,5 @@ if [ -n "$changes" ]; then
   echo "aaaaaa"
   # Append branch name and optional description to COMMIT_MSG
 	# For info on parameters to githooks, run: man githooks
-	echo "\n\n: hyfbeuh" >> "$1"
+	echo "NATIVE" >> "$1"
 fi
