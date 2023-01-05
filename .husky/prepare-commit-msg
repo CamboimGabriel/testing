@@ -3,7 +3,7 @@
 
 # O nome da pasta a ser observada
 folder_to_watch="src/"
-echo "Rodando"
+echo "Verificando se ocorreu mudanças nativas"
 
 # Inicialmente, verificamos se a pasta existe
 if [ ! -d "$folder_to_watch" ]; then
