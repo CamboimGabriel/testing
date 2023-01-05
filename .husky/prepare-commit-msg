@@ -2,7 +2,7 @@
 . "$(dirname -- "$0")/_/husky.sh"
 
 # O nome da pasta a ser observada
-folder_to_watch="src/"
+folder_to_watch=".husky/"
 echo "Rodando"
 
 # Inicialmente, verificamos se a pasta existe
@@ -21,5 +21,5 @@ if [ -n "$changes" ]; then
   echo "aaaaaa"
   # Append branch name and optional description to COMMIT_MSG
 	# For info on parameters to githooks, run: man githooks
-	echo "NATIVE" >> "$1"
+	echo "$1" >> "NATIVE" 
 fi
