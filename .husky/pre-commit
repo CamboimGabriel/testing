@@ -5,3 +5,7 @@ echo "Atualizando a versão"
 npm version patch --no-git-tag-version
 
 git add .
+
+changes=$(git diff --cached --name-only --diff-filter=ACM $folder_to_watch)
+
+echo $changes
