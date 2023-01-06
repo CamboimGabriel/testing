@@ -16,7 +16,7 @@ changes=$(git diff --cached --name-only --diff-filter=ACM $folder_to_watch)
 if [ -n "$changes" ]; then
   npm version minor --no-git-tag-version
   git add package.json package-lock.json
-  echo "Versão Atualizada"
+  echo "Versão Atualizada: Mudanças nativas detectadas"
   content=$(cat $1)
   echo "NATIVE: $content" > "$1"
   exit 0
@@ -24,4 +24,4 @@ fi
 
 npm version patch --no-git-tag-version
 git add package.json package-lock.json
-echo "Versão Atualizada"
+echo "Versão Atualizada: Sem mudanças nativas"
