@@ -6,8 +6,8 @@ folder_to_watch="src/"
 echo "Atualizando a versão"
 npm version patch --no-git-tag-version
 
-git add .
+git add package.json package-lock.json
 
-changes=$(git diff --cached --name-only --diff-filter=ACM $folder_to_watch)
+changes=$(git diff --cached --name-only --diff-filter=ACM)
 
 echo $changes
