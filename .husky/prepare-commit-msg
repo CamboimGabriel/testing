@@ -11,7 +11,10 @@ fi
 
 changes=$(git diff --cached --name-only --diff-filter=ACM $folder_to_watch)
 
+
 if [ -n "$changes" ]; then
   content=$(cat $1)
   echo "NATIVE: $content" > "$1"
+  npm version patch --no-git-tag-version
 fi
+
