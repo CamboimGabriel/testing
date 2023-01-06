@@ -1,4 +1,7 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
+echo "START pre-commit hook"
 npm version patch --no-git-tag-version
+
+git add .
