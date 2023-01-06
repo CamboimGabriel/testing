@@ -1,25 +1,17 @@
 #!/usr/bin/env sh
 . "$(dirname -- "$0")/_/husky.sh"
 
-# O nome da pasta a ser observada
 folder_to_watch="src/"
 echo "Verificando se ocorreu mudanças nativas"
 
-# Inicialmente, verificamos se a pasta existe
 if [ ! -d "$folder_to_watch" ]; then
   echo "A pasta $folder_to_watch não existe!"
   exit 1
 fi
 
-# Usamos o comando "git ls-files" para verificar se houve alterações na pasta
-# Verificamos se houve alterações na pasta
 changes=$(git diff --cached --name-only --diff-filter=ACM $folder_to_watch)
 
-echo $changes
-# Se houve alterações, adicionamos todas elas ao índice do Git e fazemos o commit
 if [ -n "$changes" ]; then
-  # Append branch name and optional description to COMMIT_MSG
-	# For info on parameters to githooks, run: man githooks
-content=$(cat $1) # no cat abuse this time
-echo "NATIVE: $content" > "$1"
+  content=$(cat $1)
+  echo "NATIVE: $content" > "$1"
 fi
