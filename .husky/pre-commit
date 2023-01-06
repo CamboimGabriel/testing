@@ -24,4 +24,4 @@ fi
 
 npm version patch --no-git-tag-version
 git add package.json package-lock.json
-echo "Versão Atualizada: Sem mudanças nativas"
+echo "Versão Atualizada: Sem mudanças nativas detectadas"
