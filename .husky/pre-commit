@@ -17,6 +17,7 @@ if [ -n "$changes" ]; then
   npm version minor --no-git-tag-version
   git add package.json package-lock.json
   echo "Versão Atualizada: Mudanças nativas detectadas"
+  echo "Adicionando prefixo ao commit"
   content=$(cat $1)
   echo "NATIVE: $content" > "$1"
   exit 0
