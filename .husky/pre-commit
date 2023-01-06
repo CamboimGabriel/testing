@@ -3,11 +3,25 @@
 
 folder_to_watch="src/"
 
-echo "Atualizando a versão"
+echo "Rodando script de versionamento"
+echo "Verificando se ocorreram mudanças nativas"
+
+if [ ! -d "$folder_to_watch" ]; then
+  echo "A pasta $folder_to_watch não existe!"
+  exit 1
+fi
+
+changes=$(git diff --cached --name-only --diff-filter=ACM $folder_to_watch)
+
+if [ -n "$changes" ]; then
+  npm version minor --no-git-tag-version
+  git add package.json package-lock.json
+  echo "Versão Atualizada"
+  content=$(cat $1)
+  echo "NATIVE: $content" > "$1"
+  exit 0
+fi
+
 npm version patch --no-git-tag-version
-
 git add package.json package-lock.json
-
-changes=$(git diff --cached --name-only --diff-filter=ACM)
-
-echo $changes
+echo "Versão Atualizada"
